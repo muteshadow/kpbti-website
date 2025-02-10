@@ -17,9 +17,9 @@
                     <p>Приймальня начальника 03557 2-1513</p>
                 </div>
                 <div class="footer_item footer_images">
-                    <img src="img/Logo_of_the_Verkhovna_Rada_of_Ukraine.svg.png" width="160" alt="">
-                    <img src="img/npu-logo-v1-1.png" width="160" alt="">
-                    <img src="img/96-1024x341-removebg-preview.png" width="160" alt="">
+                    <a href="https://www.rada.gov.ua/" target="_blank"><img src="img/footer_logo1.png" width="160" alt=""></a>
+                    <a href="https://npu.ua/" target="_blank"><img src="img/footer_logo2.png" width="160" alt=""></a>
+                    <a href="https://minjust.gov.ua/" target="_blank"><img src="img/footer_logo3.png" width="160" alt=""></a>
                 </div>
             </div>
         </div>

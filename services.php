@@ -16,7 +16,7 @@
                     <p class="section_content">Для оформлення замовлень при собі необхідно мати: документ, що посвідчує особу (паспорт громадянина України); документ, що підтверджує право власності на об'єкт нерухомого майна (за наявності); запит нотаріуса у випадку необхідності (напр., вступ в спадщину).</p>
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="1000"><img src="img/5456be080eb1ab66f18de4aca231dc98.jpg" width="370" height="250" alt=""></div>
+            <div data-aos="fade-up" data-aos-duration="1000"><img src="img/services.jpg" width="370" height="250" alt=""></div>
         </div>
     </div>
 </div>
