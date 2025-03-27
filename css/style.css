@@ -3,6 +3,7 @@ body {
     font-family: "Zilla Slab", serif;
     color: #000;
     font-size: clamp(14px, 2.5vw, 18px);
+    letter-spacing: 0.02em;
 }
 
 *,
@@ -232,7 +233,7 @@ img {
 
 .intro_title {
     font-size: clamp(30px, 4.5vw, 60px);
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .btn {
@@ -363,6 +364,7 @@ img {
 
 .new_content {
     margin: 30px 0;
+    /* text-align: center; */
 }
 
 .new_title {
@@ -370,10 +372,19 @@ img {
     font-size: clamp(18px, 2.5vw, 22px);
 }
 
+.new_title_section {
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 48px);
+}
+
 .new_data {
     font-family: "Work Sans", serif;
     font-size: clamp(12px, 1.5vw, 14px);
     margin: 10px 0;
+}
+
+.new_data_section {
+    margin-bottom: 50px;
 }
 
 .new_text {
@@ -383,8 +394,13 @@ img {
 .new_image {
     width: 370px; 
     height: 250px; 
-    object-fit: cover; 
 }
+
+/* .new_img {
+    position: sticky;
+    top: 10px;
+    right: 0;
+} */
 
 /* MAP */
 #map {
@@ -492,7 +508,6 @@ img {
 }
 
 .card_service {
-    font-size: 22px;
     margin: 10px 0;
     color: #000;
     text-decoration: none;
@@ -538,6 +553,7 @@ img {
 .footer_images {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -562,12 +578,25 @@ img {
         text-align: center;
     }
 
+    .new_title_section {
+        font-size: clamp(20px, 4vw, 35px);
+        text-align: center;
+    }
+
+    .new_data_section {
+        text-align: center;
+    }
+
     .inner_section, .gray {
         align-items: center;
     }
 
     .inner_section.gray {
         flex-direction: column;
+    }
+
+    .new_section {
+        flex-direction: column-reverse;
     }
 
     .section_item {
@@ -631,6 +660,7 @@ img {
         width: 100%;
         opacity: 0;
         transition: max-height 0.3s ease, opacity 0.3s ease;
+        z-index: 100;
     }
 
     .nav.open {

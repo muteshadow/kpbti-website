@@ -1,3 +1,8 @@
+<?php
+    include_once "config.php";
+    include "function.php";
+?>
+
 <!DOCTYPE html>
 <html lang="ua">
 <head>
@@ -34,19 +39,19 @@
         <div class="modal_title">Реєстрація</div>
         <form id="registrationForm">        
             <div class="form-group">
-                <input type="text" name="surname" class="input" placeholder="Прізвище">
+                <input type="text" name="surname" class="input" placeholder="Прізвище" required>
             </div>
 
             <div class="form-group">
-                <input type="text" name="name" class="input" placeholder="Ім'я">
+                <input type="text" name="name" class="input" placeholder="Ім'я" required>
             </div>
 
             <div class="form-group">
-                <input type="text" name="patronymic" class="input" placeholder="По батькові">
+                <input type="text" name="patronymic" class="input" placeholder="По батькові" required>
             </div>
 
             <div class="form-group">
-                <input type="password" name="password" class="input password" placeholder="Пароль">
+                <input type="password" name="password" class="input password" placeholder="Пароль" required>
             </div>
             
             <button type="submit" class="btn">Зареєструватися</button>
@@ -58,23 +63,15 @@
 <!-- AUTHORIZATION MODAL -->
 <div class="modal" id="authorizationModal">
     <div class="modal-content">
-        <span class="authorizationСlose"><i class="fa-solid fa-xmark"></i></span>
+        <span class="close"><i class="fa-solid fa-xmark"></i></span>
         <div class="modal_title">Авторизація</div>
         <form id="authorizationForm">        
-            <div class="form-group">
-                <input type="text" name="surname" class="input" placeholder="Прізвище">
+        <div class="form-group">
+                <input type="text" name="surname" class="input" placeholder="Прізвище" required>
             </div>
 
             <div class="form-group">
-                <input type="text" name="name" class="input" placeholder="Ім'я">
-            </div>
-
-            <div class="form-group">
-                <input type="text" name="patronymic" class="input" placeholder="По батькові">
-            </div>
-
-            <div class="form-group">
-                <input type="password" name="password" class="input password" placeholder="Пароль">
+                <input type="password" name="password" class="input password" placeholder="Пароль" required>
             </div>
             
             <button type="submit" class="btn">Увійти</button>
