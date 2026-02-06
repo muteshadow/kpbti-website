@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryDiv.innerHTML = `
                 <label>${catName}</label>
                 <div class="select-container">
-                    <img src="../${cat.image}" alt="${catName}" class="category-image">
+                    <img src="${cat.image}" alt="${catName}" class="category-image">
                     <select onchange="loadDocuments(this, '${type}')">
                         <option value="">Оберіть послугу</option>
                         ${servicesOptions}

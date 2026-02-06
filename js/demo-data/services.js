@@ -3,85 +3,85 @@ const servicesData = {
         {
             category_name: 'Квартира',
             service_name: 'Інформаційна довідка',
-            image: '../img/apartment.jpg',
+            image: 'img/apartment.jpg',
             document_ids: [1,2,3,4]
         },
         {
             category_name: 'Квартира',
             service_name: 'Технічний паспорт',
-            image: '../img/apartment.jpg',
+            image: 'img/apartment.jpg',
             document_ids: [15,17]
         },
         {
             category_name: 'Гараж',
             service_name: 'Інформаційна довідка',
-            image: '../img/garage.jpg',
+            image: 'img/garage.jpg',
             document_ids: [1,2,3,4]
         },
         {
             category_name: 'Гараж',
             service_name: 'Технічний паспорт',
-            image: '../img/garage.jpg',
+            image: 'img/garage.jpg',
             document_ids: [11,2,4]
         },
         {
             category_name: 'Машиномісце',
             service_name: 'Інформаційна довідка',
-            image: '../img/parking.jpg',
+            image: 'img/parking.jpg',
             document_ids: [1,2,3,4]
         },
         {
             category_name: 'Машиномісце',
             service_name: 'Технічний паспорт',
-            image: '../img/parking.jpg',
+            image: 'img/parking.jpg',
             document_ids: [11,2,4,13]
         },
         {
             category_name: 'Садовий будинок',
             service_name: 'Інформаційна довідка',
-            image: '../img/garden.jpg',
+            image: 'img/garden.jpg',
             document_ids: [1,2,3,4]
         },
         {
             category_name: 'Садовий будинок',
             service_name: 'Технічний паспорт',
-            image: '../img/garden.jpg',
+            image: 'img/garden.jpg',
             document_ids: [11,12,2,4]
         },
         {
             category_name: 'Приватний будинок',
             service_name: 'Інформаційна довідка',
-            image: '../img/house.jpg',
+            image: 'img/house.jpg',
             document_ids: [1,2,3,4]
         },
         {
             category_name: 'Приватний будинок',
             service_name: 'Технічний паспорт',
-            image: '../img/house.jpg',
+            image: 'img/house.jpg',
             document_ids: [11,12,2,4]
         },
         {
             category_name: 'Нежиле приміщення',
             service_name: 'Інформаційна довідка',
-            image: '../img/warehouse.jpg',
+            image: 'img/warehouse.jpg',
             document_ids: [1,2,3,4]
         },
         {
             category_name: 'Нежиле приміщення',
             service_name: 'Технічний паспорт',
-            image: '../img/warehouse.jpg',
+            image: 'img/warehouse.jpg',
             document_ids: [11,2,4]
         },
         {
             category_name: 'Захисна споруда',
             service_name: 'Інформаційна довідка',
-            image: '../img/shelter.jpg',
+            image: 'img/shelter.jpg',
             document_ids: [1,2,3,4]
         },
         {
             category_name: 'Захисна споруда',
             service_name: 'Технічний паспорт',
-            image: '../img/shelter.jpg',
+            image: 'img/shelter.jpg',
             document_ids: [11,2,4]
         }
     ],
@@ -90,85 +90,85 @@ const servicesData = {
         {
             category_name: 'Квартира',
             service_name: 'Інформаційна довідка',
-            image: '../img/apartment.jpg',
+            image: 'img/apartment.jpg',
             document_ids: [1,2,3,4,5,6,7,8,9,10]
         },
         {
             category_name: 'Квартира',
             service_name: 'Технічний паспорт',
-            image: '../img/apartment.jpg',
+            image: 'img/apartment.jpg',
             document_ids: [11,2,4,21,22,23,24]
         },
         {
             category_name: 'Гараж',
             service_name: 'Інформаційна довідка',
-            image: '../img/garage.jpg',
+            image: 'img/garage.jpg',
             document_ids: [1,2,3,4,5,6,7,8,9,10]
         },
         {
             category_name: 'Гараж',
             service_name: 'Технічний паспорт',
-            image: '../img/garage.jpg',
+            image: 'img/garage.jpg',
             document_ids: [11,2,4,21,22,23,25]
         },
         {
             category_name: 'Машиномісце',
             service_name: 'Інформаційна довідка',
-            image: '../img/parking.jpg',
+            image: 'img/parking.jpg',
             document_ids: [1,2,3,4,5,6,7,8,9,10]
         },
         {
             category_name: 'Машиномісце',
             service_name: 'Технічний паспорт',
-            image: '../img/parking.jpg',
+            image: 'img/parking.jpg',
             document_ids: [11,2,4,13,21,22,23,24]
         },
         {
             category_name: 'Садовий будинок',
             service_name: 'Інформаційна довідка',
-            image: '../img/garden.jpg',
+            image: 'img/garden.jpg',
             document_ids: [1,2,3,4,5,6,7,8,9,10]
         },
         {
             category_name: 'Садовий будинок',
             service_name: 'Технічний паспорт',
-            image: '../img/garden.jpg',
+            image: 'img/garden.jpg',
             document_ids: [11,12,2,4,21,22,23,24]
         },
         {
             category_name: 'Приватний будинок',
             service_name: 'Інформаційна довідка',
-            image: '../img/house.jpg',
+            image: 'img/house.jpg',
             document_ids: [1,2,3,4,5,6,7,8,9,10]
         },
         {
             category_name: 'Приватний будинок',
             service_name: 'Технічний паспорт',
-            image: '../img/house.jpg',
+            image: 'img/house.jpg',
             document_ids: [11,12,2,4,21,22,23,24]
         },
         {
             category_name: 'Нежиле приміщення',
             service_name: 'Інформаційна довідка',
-            image: '../img/warehouse.jpg',
+            image: 'img/warehouse.jpg',
             document_ids: [1,2,3,4,5,6,7,8,9,10]
         },
         {
             category_name: 'Нежиле приміщення',
             service_name: 'Технічний паспорт',
-            image: '../img/warehouse.jpg',
+            image: 'img/warehouse.jpg',
             document_ids: [11,2,4,21,22,23,24,26]
         },
         {
             category_name: 'Захисна споруда',
             service_name: 'Інформаційна довідка',
-            image: '../img/shelter.jpg',
+            image: 'img/shelter.jpg',
             document_ids: [1,2,3,4,5,6,7,8,9,10]
         },
         {
             category_name: 'Захисна споруда',
             service_name: 'Технічний паспорт',
-            image: '../img/shelter.jpg',
+            image: 'img/shelter.jpg',
             document_ids: [11,2,14,21,22,23,27,28]
         }
     ],
@@ -354,7 +354,7 @@ function renderServiceImage(image) {
     const img = document.getElementById('serviceImage');
     if (!img) return;
 
-    img.src = image || '../img/no-image.jpg';
+    img.src = image || 'img/no-image.jpg';
     img.alt = 'service image';
 }
 
