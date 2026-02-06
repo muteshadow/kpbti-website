@@ -1,0 +1,384 @@
+/* HEADER */
+.logout_container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout {
+    font-size: clamp(16px, 2vw, 18px);
+    text-align: right;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Section */
+.welcome {
+    margin-bottom: 30px;
+}
+.section_subtitle {
+    font-size: clamp(24px, 3vw, 36px);
+    margin-bottom: 50px;
+}
+
+.user_email {
+    
+    font-size: clamp(16px, 2.5vw, 18px);
+}
+
+/* Calendar */
+.calendar {
+    width: 100%;
+    max-width: 700px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+    margin: 0 auto;
+}
+
+.calendar th,
+.calendar td {
+    padding: 10px;
+    border: 1px solid #EFF2F4;
+    text-align: center;
+}
+
+.calendar .workday {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
+.calendar .workday:hover {
+    background-color: #d0eaff;
+}
+
+.calendar .weekend {
+    background-color: #f8f8f8;
+    color: #bbb;
+}
+
+.calendar .workday.disabled, 
+.calendar .weekend.disabled {
+    background-color: #f0f0f0 !important; /* Перекриваємо фоновий колір */
+    color: #bbb !important; /* Перекриваємо колір тексту */
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.calendar-navigation a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.calendar-navigation span {
+    font-weight: bold;
+}
+
+.calendar td.active-day {
+    background-color: #184DBD !important; /* Ваш колір */
+    color: #fff !important;
+    border-radius: 4px;
+}
+.calendar td.workday { cursor: pointer; }
+
+/* SELECTION */
+.calendar_container {
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.selection_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.selection-block {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.select-label {
+    margin: 15px 0;
+    flex-shrink: 0;
+}
+
+select {
+    flex-grow: 1;
+    padding: 8px 20px;
+    font-size: clamp(16px, 2vw, 18px);
+    border: 1px solid #EFF2F4;
+    border-radius: 10px;
+    font-family: "Work Sans", serif;
+    color: #5E5E63;
+    background-color: #fff;
+    appearance: auto; /* Повертаємо стандартну стрілочку */
+    -webkit-appearance: auto; /* Для Safari */
+    cursor: pointer;
+}
+
+/* Categories */
+.selection-services {
+    margin-bottom: 50px;
+}
+
+/* Стилі для контейнера категорії */
+#serviceContainers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+}
+
+.category-container label {
+    font-size: clamp(18px, 2.5vw, 22px);
+    margin-bottom: 30px;
+    display: block;
+    text-align: center;
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.category-container .category-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; 
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.category-container select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 370px;
+    height: 70px;
+    padding: 8px 20px 8px 100px;
+    font-size: clamp(16px, 2vw, 18px);
+    border: 1px solid #EFF2F4;
+    border-radius: 35px;
+    font-family: "Work Sans", serif;
+    color: #5E5E63;
+    background-color: #fff;
+    appearance: auto; /* Повертаємо стандартну стрілочку */
+    -webkit-appearance: auto; /* Для Safari */
+    cursor: pointer;
+}
+
+/* Documents */
+.service-documents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-documents div {
+    width: 100%;
+    max-width: 370px;
+}
+
+.service-documents div input {
+    margin-right: 15px;
+}
+
+.form-btn {
+    width: 100%;
+}
+
+/* Appointments */
+.appointments-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.appointment-card {
+    width: 100%;
+    max-width: 370px;
+    padding: 30px 20px;
+    border: 2px solid #EFF2F4;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.appointment_date {
+    text-align: center;
+    font-size: clamp(18px, 2.5vw, 22px);
+    margin-bottom: 15px;
+}
+
+.time_type_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    color: #5E5E63;
+    justify-content: center;
+}
+
+.appointment-service {
+    font-weight: 700;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.appointment-documents {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.appointment-status {
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.status-process {
+    color: #007bff;
+}
+
+.status-cancelled {
+    color: #dc3545; 
+}
+
+.status-completed {
+    color: #28a745;
+}
+
+.status-form {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-block input,
+.search-block input {
+    flex-grow: 1;
+    padding: 8px 20px;
+    font-size: clamp(16px, 2vw, 18px);
+    border: 1px solid #EFF2F4;
+    border-radius: 10px;
+    font-family: "Work Sans", serif;
+    color: #5E5E63;
+    background-color: #fff;
+}
+
+.search_block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Admin */
+.admin-tabs {
+    margin-top: 60px;
+}
+
+.admin-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin-nav a {
+    text-decoration: none;
+    background-color: rgba(94, 94, 99, 0.15);
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+
+.admin-nav a:hover {
+    text-decoration: underline;
+}
+
+.admin-nav a.active {
+    background-color: rgba(239, 242, 244, 0.15);
+}
+
+/* Admin-Modal */
+.modal_btn_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.search_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.search-block {
+    display: flex;
+}
+
+.search-block input,
+.search-block select {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-button {
+    /* background-color: rgba(24, 77, 189, 0.15); */
+    background-color: rgba(239, 242, 244, 0.5);
+    color: #5E5E63;
+    padding: 8px 20px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: background-color .2s;
+}
+
+.search-button:hover {
+    background-color: #EFF2F4;
+}
