@@ -1,0 +1,101 @@
+<!-- REGISTRATION MODAL -->
+<div class="modal" id="registrationModal">
+    <div class="modal-content">
+        <h2 class="modal_title">
+            Реєстрація
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+        </h2>
+        <form class="modalForm" id="registrationForm">
+            <div class="form-group">
+                <input type="text" name="surname" class="input" placeholder="Прізвище" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="name" class="input" placeholder="Ім'я" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="patronymic" class="input" placeholder="По батькові" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" class="input" placeholder="Електронна пошта" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" class="input password" placeholder="Пароль" required>
+            </div>
+
+            <button type="submit" class="btn">Зареєструватися</button>
+        </form>
+        <div class="modal_item" id="authorizationAccount">Вже маю акаунт</div>
+
+        <!-- DEMO LOGIN BUTTONS -->
+        <div class="demo-login-links">
+            <a href="users/admin.html" class="demo-btn">Демо: Адмін</a>
+            <a href="users/worker-dashboard.html" class="demo-btn">Демо: Працівник</a>
+            <a href="users/user-dashboard.html" class="demo-btn">Демо: Користувач</a>
+        </div>
+    </div>
+</div>
+
+<!-- AUTHORIZATION MODAL -->
+<div class="modal" id="authorizationModal">
+    <div class="modal-content">
+        <h2 class="modal_title">
+            Авторизація
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+        </h2>
+        <form class="modalForm" id="authorizationForm">
+            <div class="form-group">
+                <input type="text" name="surname" class="input" placeholder="Прізвище" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" class="input" placeholder="Електронна пошта" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" class="input password" placeholder="Пароль" required>
+            </div>
+
+            <button type="submit" class="btn">Увійти</button>
+        </form>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <div class="logo-toggle">
+            <a href="index.html"><img src="../img/logow.png" height="52" alt="logo"></a>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="nav">
+            <a href="news.html" class="nav_item">Новини</a>
+            <a href="about.html" class="nav_item">Про нас</a>
+            <a href="index.html" class="nav_item logo"><img src="../img/logow.png" alt="logo"></a>
+            <a href="documents.html" class="nav_item">Документи</a>
+            <div class="nav_item" id="personalAccount">Особистий кабінет</div>
+        </nav>
+    </div>
+</header>
+
+<!-- INTRO -->
+<section class="intro">
+    <div class="container">
+        <div class="inner_intro">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <h2 class="intro_suptitle">Комунальне підприємство Гусятинської селищної ради</h2>
+                <h1 class="intro_title">"Бюро технічної інвентаризації" Гусятинської селищної ради</h1>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <a href="services.html" class="btn">Наші послуги</a>
+            </div>
+        </div>
+    </div>
+</section>
