@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <title>Кабінет працівника | КП БТІ</title>
+</head>
+
+<body>
+    <header class="header-short">
+        <div class="container">
+            <div class="logout_container">
+                <a href="../index.html" class="logout">Вихід</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro-short">
+        <div class="container">
+            <div class="inner_intro-short">
+                <h3 class="intro_title" data-aos="fade-right" data-aos-duration="1000">Панель адміністратора</h3>
+
+                <div class="breadcrumbs" data-aos="fade-right" data-aos-duration="1000">
+                    <a href="index.html">Головна-></a> 
+                    <span>Панель адміністратора</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="admin-tabs" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <nav class="admin-nav">
+                <a href="admin.html" class="active">Користувачі</a>
+                <a href="#">Замовлення</a>
+                <a href="#">Послуги</a>
+                <a href="#">Категорії</a>
+                <a href="#">Документи</a>
+                <a href="#">Новини</a>
+                <a href="#">Статистика</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Модальне вікно для додавання нового користувача -->
+    <div class="modal" id="addUserModal">
+        <div class="modal-content">
+            <h2 class="modal_title">
+                Додати нового користувача
+                <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            </h2>
+            <form class="modalForm hide" method="POST" id="addUserForm">
+                <div class="form-group">
+                    <input class="input" type="text" name="name" placeholder="Ім'я" required>
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="text" name="surname" placeholder="Прізвище" required>
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="text" name="patronymic" placeholder="По батькові">
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="password" name="password" placeholder="Пароль" required>
+                </div>
+
+                <label for="role">Роль:</label>
+                <select name="role" required>
+                    <option value="user">Користувач</option>
+                    <option value="worker">Працівник</option>
+                    <option value="admin">Адміністратор</option>
+                </select><br>
+
+                <div class="modal_btn_container">
+                    <button class="btn" type="submit">Додати</button>
+                    <button class="cancel btn">Скасувати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальне вікно для редагування користувача -->
+    <div class="modal" id="editUserModal">
+        <div class="modal-content">
+            <h2 class="modal_title">
+                Редагувати користувача
+                <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            </h2>
+            <form class="modalForm hide" method="POST" id="editUserForm">
+                <div class="form-group">
+                    <input class="input" type="hidden" name="user_id" id="editUserId">
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="text" name="name" id="editName" placeholder="Ім'я" required>
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="text" name="surname" id="editSurname" placeholder="Прізвище" required>
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="text" name="patronymic" id="editPatronymic" placeholder="По батькові">
+                </div>
+
+                <div class="form-group">
+                    <input class="input" type="email" name="email" id="editEmail" placeholder="Email" required>
+                </div>
+
+                <label for="editRole">Роль:</label>
+                <select name="role" id="editRole" required>
+                    <option value="user">Користувач</option>
+                    <option value="worker">Працівник</option>
+                    <option value="admin">Адміністратор</option>
+                </select><br>
+
+                <div class="modal_btn_container">
+                    <button class="btn" type="submit">Зберегти зміни</button>
+                    <button class="cancel btn">Скасувати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section class="section section-short">
+        <div class="container">
+            <h3 class="section_title title_center" data-aos="fade-up" data-aos-duration="1000">Управління користувачами</h3>
+
+            <div class="search_container">
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <button class="btn" id="addUserBtn">Додати користувача</button>
+                </div>
+
+                <div class="search-block" data-aos="fade-up" data-aos-duration="1000">
+                    <input type="text" id="adminSearchSurname" placeholder="Пошук за прізвищем">
+                    <button class="search-button" id="adminSearchBtn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <div class="search-block" data-aos="fade-up" data-aos-duration="1000">
+                    <select id="adminRoleFilter">
+                        <option value="">Вибір ролі</option>
+                        <option value="user">Користувач</option>
+                        <option value="worker">Працівник</option>
+                        <option value="admin">Адміністратор</option>
+                    </select>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <button class="btn_documents reset-btn" id="adminResetFilters">Усі користувачі</button>
+                </div>
+            </div>
+
+            <div class="inner_section card_container" id="adminUsersGrid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="inner_footer">
+                <div class="footer_item">
+                    <div class="logo"><img src="../img/logow.png" height="52" alt="logo"></div>
+                    <p>Комунальне підприємство Гусятинської селищної ради</p>
+                    <p>"Бюро технічної інвентаризації" Гусятинської селищної ради</p>
+                </div>
+
+                <div class="footer_item">
+                    <p class="footer_title schedule">Графік роботи Бюро</p>
+                    <p>Понеділок - четвер з 9:00 до 17:00</p>
+                    <p>П'ятниця з 9:00 до 16:00</p>
+                    <p>Перерва з 13:00 до 14:00</p>
+
+                    <p class="footer_title">Отримання довідкової інформації</p>
+                    <p>Приймальня начальника 03557 2-1513</p>
+                </div>
+
+                <div class="footer_images">
+                    <a href="https://www.rada.gov.ua/" target="_blank"><img src="../img/footer_logo1.png" width="210" alt=""></a>
+                    <a href="https://npu.ua/" target="_blank"><img src="../img/footer_logo2.png" width="210" alt=""></a>
+                    <a href="https://minjust.gov.ua/" target="_blank"><img src="../img/footer_logo3.png" width="210" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/admin.js"></script>
+    <script src="js/users.js"></script>
+</body>
+
+</html>
