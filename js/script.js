@@ -5,84 +5,112 @@ $(document).ready(function () {
     // NAV-TOGGLE
     document.querySelector('.menu-toggle').addEventListener('click', () => {
         document.querySelector('.nav').classList.toggle('open');
+        document.querySelector('.menu-toggle').classList.toggle('open');
     });
 
-    // REGISTRATION MODAL
-    // Открыть модальное окно с анимацией
+    // Функція відкриття модального вікна
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.remove('hide');
+        modal.style.display = 'block';
+    }
+
+    // Функція закриття модального вікна
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.add('hide');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 500);
+    }
+
+    // Відкриття модального вікна реєстрації
     document.getElementById('personalAccount').addEventListener('click', function () {
-        const modal = document.getElementById('registrationModal');
-        modal.classList.remove('hide'); // Удаляем класс скрытия
-        modal.style.display = 'block'; // Показываем окно
+        openModal('registrationModal');
     });
 
-    // Закрыть модальное окно с анимацией
-    document.querySelector('.modal .close').addEventListener('click', function () {
-        const modal = document.getElementById('registrationModal');
-        modal.classList.add('hide'); // Добавляем класс скрытия
-        setTimeout(() => {
-            modal.style.display = 'none'; // Скрываем окно после завершения анимации
-        }, 500); // Время должно совпадать с длительностью анимации
+    // Закриття модального вікна реєстрації
+    document.querySelector('#registrationModal .close').addEventListener('click', function () {
+        closeModal('registrationModal');
     });
 
-    // Закрыть модальное окно при клике вне его с анимацией
+    // Закриття при кліку поза вікном
     window.addEventListener('click', function (event) {
         const modal = document.getElementById('registrationModal');
         if (event.target === modal) {
-            modal.classList.add('hide'); // Добавляем класс скрытия
-            setTimeout(() => {
-                modal.style.display = 'none'; // Скрываем окно после завершения анимации
-            }, 500); // Время должно совпадать с длительностью анимации
+            closeModal('registrationModal');
         }
     });
 
-    // Обработчик отправки формы
-    document.getElementById('registrationForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Предотвратить отправку формы
-        alert('Реєстрація успішна!');
-        const modal = document.getElementById('registrationModal');
-        modal.classList.add('hide'); // Добавляем класс скрытия
-        setTimeout(() => {
-            modal.style.display = 'none'; // Скрываем окно после завершения анимации
-        }, 500); // Время должно совпадать с длительностью анимации
-    });
-
-    // AUTHORIZATION MODAL
-    // Открыть модальное окно с анимацией
+    // Відкриття модального вікна авторизації
     document.getElementById('authorizationAccount').addEventListener('click', function () {
-        const modal = document.getElementById('authorizationModal');
-        modal.classList.remove('hide'); // Удаляем класс скрытия
-        modal.style.display = 'block'; // Показываем окно
+        openModal('authorizationModal');
     });
 
-    // Закрыть модальное окно с анимацией
-    document.querySelector('.modal .authorizationСlose').addEventListener('click', function () {
-        const modal = document.getElementById('authorizationModal');
-        modal.classList.add('hide'); // Добавляем класс скрытия
-        setTimeout(() => {
-            modal.style.display = 'none'; // Скрываем окно после завершения анимации
-        }, 500); // Время должно совпадать с длительностью анимации
+    // Закриття авторизаційного модального вікна
+    document.querySelector('#authorizationModal .close').addEventListener('click', function () {
+        closeModal('authorizationModal');
     });
 
-    // Закрыть модальное окно при клике вне его с анимацией
+    // Закриття при кліку поза вікном
     window.addEventListener('click', function (event) {
         const modal = document.getElementById('authorizationModal');
         if (event.target === modal) {
-            modal.classList.add('hide'); // Добавляем класс скрытия
-            setTimeout(() => {
-                modal.style.display = 'none'; // Скрываем окно после завершения анимации
-            }, 500); // Время должно совпадать с длительностью анимации
+            closeModal('authorizationModal');
         }
     });
 
-    // Обработчик отправки формы
-    document.getElementById('authorizationForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Предотвратить отправку формы
-        alert('Реєстрація успішна!');
-        const modal = document.getElementById('authorizationModal');
-        modal.classList.add('hide'); // Добавляем класс скрытия
-        setTimeout(() => {
-            modal.style.display = 'none'; // Скрываем окно после завершения анимации
-        }, 500); // Время должно совпадать с длительностью анимации
+    // Обробка форми реєстрації через AJAX
+    document.getElementById("registrationForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        let formData = new FormData(this); // отримуємо дані з форми, включаючи email
+
+        if (DEMO_MODE) {
+            alert("Реєстрація недоступна у демо-версії.");
+            return;
+        }
+
+        fetch("login/register.php", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);  // виведення повідомлення користувачу
+                if (data.status === "success") {
+                    closeModal("registrationModal");  // закриваємо модальне вікно реєстрації
+                }
+            });
     });
 
+    // Обробка форми авторизації через AJAX
+    document.getElementById("authorizationForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Створення нового об'єкта FormData з усіма полями форми
+        let formData = new FormData(this);
+
+        if (DEMO_MODE) {
+            alert("Авторизація недоступна у демо-версії.");
+            return;
+        }
+
+        // Відправка даних через fetch
+        fetch("login/login.php", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+
+                if (data.status === "success") {
+                    window.location.href = data.redirect;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Сталася помилка при обробці запиту.");
+            });
+    });
 });
