@@ -292,7 +292,7 @@ function createServiceLink({ categoryName, service, personType }) {
     const link = document.createElement('a');
     link.classList.add('card_service');
 
-    const url = new URL('gh-pages/service.html', window.location.origin);
+    const url = new URL('service.html', window.location.href);
     url.searchParams.set('property', categoryName);
     url.searchParams.set('service', service);
     url.searchParams.set('personType', personType);
@@ -415,3 +415,4 @@ function initServiceIntro() {
         breadcrumbs.appendChild(currentSpan);
     }
 }
+
