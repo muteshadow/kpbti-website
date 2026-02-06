@@ -231,6 +231,11 @@
         height: auto;
     }
 
+    .card-circle img {
+        width: 100%;
+        height: 100%;
+    }
+
     .selection-block {
         flex-direction: column;
     }
@@ -244,4 +249,5 @@
         height: 60px;
         padding: 8px 18px 8px 90px;
     }
+
 }
